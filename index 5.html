@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiny Survival</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud">
+    <div id="stats" class="panel">
+      <div class="stat">
+        <span>Gesundheit</span>
+        <div class="bar"><div id="bar-health" class="fill-health"></div></div>
+      </div>
+      <div class="stat">
+        <span>Hunger</span>
+        <div class="bar"><div id="bar-hunger" class="fill-hunger"></div></div>
+      </div>
+    </div>
+
+    <div id="time" class="panel">
+      <div id="day">Tag 1 von 5</div>
+      <div id="phase">Tag</div>
+    </div>
+
+    <div id="status"></div>
+    <div id="toast"></div>
+
+    <div id="inventory" class="panel">
+      <div class="item"><b id="inv-wood">0</b> Holz</div>
+      <div class="item"><b id="inv-stone">0</b> Stein</div>
+      <div class="item"><b id="inv-berries">0</b> Beeren</div>
+      <div class="item hidden" id="inv-axe">Axt</div>
+    </div>
+
+    <div id="craft" class="panel">
+      <button class="craft-btn" data-craft="axe"><span>Axt<small>4 Holz, 2 Stein</small></span><kbd>1</kbd></button>
+      <button class="craft-btn" data-craft="fire"><span>Lagerfeuer<small>5 Holz, 2 Stein</small></span><kbd>2</kbd></button>
+      <button class="craft-btn" data-craft="hut"><span>Hütte<small>12 Holz, 6 Stein</small></span><kbd>3</kbd></button>
+      <button class="craft-btn" data-action="eat"><span>Beere essen<small>+25 Hunger</small></span><kbd>F</kbd></button>
+    </div>
+  </div>
+
+  <div id="overlay">
+    <div class="card">
+      <h1 id="ov-title">Tiny Survival</h1>
+      <p id="ov-text">Du bist auf einer kleinen Insel gestrandet. Überstehe 5 Tage: Sammle Holz und Stein, iss Beeren und bleib nachts in der Nähe von Feuer oder Hütte.</p>
+      <ul id="ov-help">
+        <li><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> oder Pfeiltasten: bewegen</li>
+        <li><kbd>E</kbd>, Leertaste oder Klick: sammeln und Holz ins Feuer legen</li>
+        <li><kbd>1</kbd> Axt, <kbd>2</kbd> Lagerfeuer, <kbd>3</kbd> Hütte herstellen</li>
+        <li><kbd>F</kbd>: Beere essen</li>
+      </ul>
+      <button id="ov-start">Spiel starten</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
